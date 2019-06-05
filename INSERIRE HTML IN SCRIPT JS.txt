@@ -1,0 +1,1 @@
+body.innerHTML = "<span>testo testo testo</span>";

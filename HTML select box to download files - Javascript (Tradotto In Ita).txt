@@ -1,0 +1,26 @@
+
+http://www.christianschenk.org/blog/html-select-dropdown-download-files/
+
+-----------------------------------------------------------------------
+
+
+                   HTML select box to download files
+
+
+Recentemente ho voluto avere un semplice elemento HTML selezionato in cui l'utente dovrebbe essere in grado di fare clic su un'opzione specifica per scaricare un determinato file. Ho trovato una soluzione che contiene alcuni JavaScript HTML e un semplice codice HTML.
+La marcatura HTML è costituita da un semplice elemento di selezione HTML che attiva una certa funzione JavaScript tramite l' hook onChange. La funzione JavaScript, a sua volta, imposta solo la window.location nel file specifico e quindi il browser inizia a scaricare :
+
+<script type="text/javascript">
+function download(d) {
+        if (d == 'Select document') return;
+        window.location = 'http://example.com' + d;
+}
+</script>
+ 
+<select name="download" onChange="download(this.value)">
+<option>Select document</option>
+<option value="a_file.pdf">A PDF document</option>
+<option value="another_file.pdf">Another PDF document</option>
+</select>
+
+Questa tecnica può essere utilizzata per saltare a qualsiasi pagina desiderata, ad esempio È possibile utilizzare una casella di selezione invece di un grande menu nella pagina. Ti aiuta a includere informazioni, ad esempio Un lungo elenco - in una pagina con la casella di riepilogo compatta che può essere posizionata quasi ovunque senza consumare molto spazio.

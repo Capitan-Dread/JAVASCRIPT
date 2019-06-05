@@ -1,0 +1,14 @@
+
+
+[SINTASSI GENERICA]
+
+
+onclick="funzionaJs()"
+
+------------------------------------------------------------------------
+
+
+[ESEMPIO GENERICO]
+
+
+<buttom type="color: red" onclick="funzionaJs()"> Clicca Qui! </buttom>

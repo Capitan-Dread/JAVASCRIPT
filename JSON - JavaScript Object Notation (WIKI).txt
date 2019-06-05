@@ -1,0 +1,385 @@
+
+https://it.wikipedia.org/wiki/JavaScript_Object_Notation
+
+--------------------------------------------------------------------------
+
+
+
+
+
+                      JSON - JavaScript Object Notation
+
+
+
+
+              JSON
+JSON vector logo.svg
+  Estensione    .json
+   Tipo MIME    application/json
+     Tipo       Scambio dati
+ Estensione di  JavaScript
+   Standard     RFC 4627
+Formato aperto? sì
+   Sito web     json.org
+
+
+
+In informatica, nell'ambito della programmazione web, JSON, acronimo di
+JavaScript Object Notation, è un formato adatto all'interscambio di dati fra
+applicazioni client/server.^[1]
+
+È basato sul linguaggio JavaScript Standard ECMA-262 3ª edizione (dicembre
+1999), ma ne è indipendente. Viene usato in AJAX come alternativa a XML/XSLT.^
+[2]
+
+[ ]
+
+Indice
+
+  • 1 Caratteristiche
+      □ 1.1 Relazione con altri linguaggi di markup
+      □ 1.2 Formato
+  • 2 Utilizzi
+      □ 2.1 In JavaScript
+  • 3 Supporto
+      □ 3.1 In JavaScript
+          ☆ 3.1.1 Altre metodologie di supporto
+  • 4 Note
+  • 5 Voci correlate
+  • 6 Altri progetti
+  • 7 Collegamenti esterni
+
+Caratteristiche[modifica | modifica wikitesto]
+
+La semplicità di JSON ne ha decretato un rapido utilizzo specialmente nella
+programmazione in AJAX. Il suo uso tramite JavaScript è particolarmente
+semplice, infatti l'interprete è in grado di eseguirne il parsing tramite la
+funzione JSON.parse().^[3] Questo lo ha reso velocemente molto popolare a causa
+della diffusione della programmazione in JavaScript nel mondo del Web.
+
+I tipi di dati supportati da questo formato sono:
+
+  • booleani (true e false);
+  • interi, numero in virgola mobile;
+  • stringhe racchiuse da doppi apici (");
+  • array (sequenze ordinate di valori, separati da virgole e racchiusi in
+    parentesi quadre []);
+  • array associativi (sequenze coppie chiave-valore separate da virgole
+    racchiuse in parentesi graffe);
+  • null.
+
+La maggior parte dei linguaggi di programmazione possiede un typesystem molto
+simile a quello definito da JSON per cui sono nati molti progetti che
+permettono l'utilizzo di JSON con altri linguaggi quali, per esempio:
+ActionScript, C, C#, Adobe ColdFusion, Common LISP, Delphi, E, Erlang, Java,
+JavaScript, Lua, ML, Objective Caml, Perl, PHP, Python, REBOL, Ruby e Rust.
+
+Uno stream JSON dovrebbe avere un'intestazione HTTP Content-Type: application/
+json.^[4]
+
+Fra i primi utilizzatori di JSON si trova Yahoo!, dal 2005.^[5]
+
+Relazione con altri linguaggi di markup[modifica | modifica wikitesto]
+
+Il JSON è un formato di interscambio di dati, ed è spesso comparato con l'XML
+che però è un linguaggio di markup. Entrambi non hanno un sistema di
+rappresentazione dei dati binari, per cui è compito del programmatore adottare
+convenzioni appropriate (es. Base64) per convertire i dati binari in forma
+testuale.
+
+Alcune delle limitazioni di JSON sono coperte da YAML.^[senza fonte]
+
+Formato[modifica | modifica wikitesto]
+
+Il seguente esempio rappresenta i dati di un'ipotetica persona in formato JSON:
+
+{
+        "name": "Mario",
+        "surname": "Rossi",
+        "active": true,
+        "favoriteNumber": 42,
+        "birthday": {
+                "day": 1,
+                "month": 1,
+                "year": 2000
+        },
+        "languages": [ "it", "en" ]
+}
+
+Utilizzi[modifica | modifica wikitesto]
+
+In JavaScript[modifica | modifica wikitesto]
+
+Segue un semplice esempio di richiesta AJAX in JavaScript, ad un URL che
+risponda con dati JSON.^[6]
+
+var httpRequest = new XMLHttpRequest();
+
+// callback
+httpRequest.addEventListener( 'load', function () {
+        // parsificazione della risposta (si presume sia in formato JSON)
+        var data = JSON.parse( this.responseText );
+
+        // fare qualcosa con i dati
+        console.log( data );
+} );
+
+// inizializzazione ed invio
+httpRequest.open( 'GET', 'https://it.wikipedia.org/w/api.php?action=query&prop=info&titles=Pagina+principale&format=json' );
+httpRequest.send();
+
+Supporto[modifica | modifica wikitesto]
+
+In JavaScript[modifica | modifica wikitesto]
+
+Tra i browser senza il supporto a JSON.parse() si citano alcune versioni,
+principalmente precedenti al 2009, in ordine alfabetico:^[7]
+
+  • Internet Explorer precedente alla versione 8
+  • Mozilla Firefox precedente alla versione 3.5
+  • Safari precedente alla versione 4
+
+Un gran numero di librerie semplificarono l'utilizzo del formato JSON per
+effettuare richieste Ajax. Si citano JQuery ed AngularJS.^[8]^[9]
+
+Storicamente vi fu un'indiscriminata adozione del metodo eval() al posto di
+JSON.parse() dato che questi due metodi sono apparentemente interscambiabili.
+Il metodo eval() però non fornisce alcuna protezione da input arbitrario e può
+portare a serie vulnerabilità.^[3]
+
+Si cita il supporto a XMLHttpRequest in ordine cronologico:^[10]
+
+  • Mozilla Firefox 3.5 (2009)
+  • Google Chrome 7 (2010)
+  • Safari 5 (2010)
+  • Internet Explorer 10 (2012)
+  • Safari e Google Chrome per iOS 5.1 (2012)
+
+Altre metodologie di supporto[modifica | modifica wikitesto]
+
+Vi sono altri modi ormai obsoleti per ottenere stream JSON, per esempio l'uso
+dell'elemento <iframe> o di form come <form action="url_to_cgi_script" target=
+"name_of_hidden_iframe">.^[non chiaro] Questi approcci erano largamente usati
+prima dell'ampio supporto dell'oggetto XMLHTTPRequest.
+
+Anche il tag <script> può essere usato per ottenere dati JSON.^[non chiaro]
+Questo permette di superare alcune limitazioni che sorgono con l'utilizzo di
+XMLHTTPRequest ma a discapito della sicurezza.^[11]
+
+Note[modifica | modifica wikitesto]
+
+ 1. ^ (EN) Introducing JSON, su JSON. URL consultato il 16 aprile 2015.
+    «JSON (JavaScript Object Notation) is a lightweight data-interchange
+    format. It is easy for humans to read and write. It is easy for machines to
+    parse and generate.».
+ 2. ^ (EN) Final draft Standard ECMA-262 edition 5.1, March 2011 (Rev. 6) -
+    Ecma 262 (PDF), su ECMA International, marzo 2011. URL consultato il 16
+    aprile 2015 (archiviato dall'url originale il 12 aprile 2015).
+ 3. ^ ^a ^b (EN) JSON.parse() vs. eval, su stackoverflow.com. URL consultato il
+    20 febbraio 2018.
+ 4. ^ (EN) The application/json encoding algorithm, su W3C.
+ 5. ^ (EN) JSON JavaScript Object Notation, su Yahoo!, 19 luglio 2005. URL
+    consultato il 16 aprile 2015.
+ 6. ^ Usare XMLHttpRequest, su developer.mozilla.org. URL consultato il 20
+    febbraio 2018.
+ 7. ^ (EN) Can I use JSON.parse, su caniuse.com. URL consultato il 20 febbraio
+    2018.
+ 8. ^ (EN) $http, su AngularJS. URL consultato il 20 febbraio 2018.
+    «The $http service is a core AngularJS service that facilitates
+    communication with the remote HTTP servers via the browser's XMLHttpRequest
+    object or via JSONP.».
+ 9. ^ (EN) jQuery.getJSON, su jQuery. URL consultato il 20 febbraio 2018.
+    «Load JSON-encoded data from the server using a GET HTTP request».
+10. ^ (EN) Can I use XMLHttpRequest, su caniuse.com. URL consultato il 20
+    febbraio 2018.
+11. ^ (EN) Douglas Crockford, JSONRequest, su json.org, 17 aprile 2006. URL
+    consultato il 20 febbraio 2018.
+
+Voci correlate[modifica | modifica wikitesto]
+
+  • AJAX
+  • YAML
+  • Web service
+  • S-expression
+  • SOAP
+  • XML-RPC
+
+Altri progetti[modifica | modifica wikitesto]
+
+Altri progetti
+
+  • Wikimedia Commons
+
+  • Collabora a Wikimedia Commons Wikimedia Commons contiene immagini o altri
+    file su JSON
+
+Collegamenti esterni[modifica | modifica wikitesto]
+
+  • 
+  • (EN) Sito ufficiale, su json.org. Modifica su Wikidata
+  • (FR) Sito ufficiale, su json.org. Modifica su Wikidata
+  • Sito ufficiale, su json.org. Modifica su Wikidata
+  • Sito italiano di approfondimenti su Json, su json.it.
+  • Formattatore JSON, su jsonformatter.org.
+  • Visualizzatore JSON, su codebeautify.org.
+
+Controllo di autorità LCCN (EN) sh2014000515 · GND (DE) 1105592812
+
+Informatica Portale Informatica Internet Portale Internet
+
+*
+Estratto da "https://it.wikipedia.org/w/index.php?title=
+JavaScript_Object_Notation&oldid=104534371"
+Categorie:
+
+  • JavaScript
+  • Web service
+  • Formati di serializzazione
+
+Categorie nascoste:
+
+  • Informazioni senza fonte
+  • Chiarire
+  • P856 letta da Wikidata
+  • Voci con codice LCCN
+  • Voci con codice GND
+  • Voci non biografiche con codici di controllo di autorità
+
+Menu di navigazione
+
+Strumenti personali
+
+  • Accesso non effettuato
+  • discussioni
+  • contributi
+  • registrati
+  • entra
+
+Namespace
+
+  • Voce
+  • Discussione
+
+[ ]
+
+Varianti
+
+Visite
+
+  • Leggi
+  • Modifica
+  • Modifica wikitesto
+  • Cronologia
+
+[ ]
+
+Altro
+
+Ricerca
+
+[                    ][Ricerca][Vai]
+ 
+
+Navigazione
+
+  • Pagina principale
+  • Ultime modifiche
+  • Una voce a caso
+  • Nelle vicinanze
+  • Vetrina
+  • Aiuto
+  • Sportello informazioni
+
+Comunità
+
+  • Portale Comunità
+  • Bar
+  • Il Wikipediano
+  • Fai una donazione
+  • Contatti
+
+Strumenti
+
+  • Puntano qui
+  • Modifiche correlate
+  • Pagine speciali
+  • Link permanente
+  • Informazioni pagina
+  • Elemento Wikidata
+  • Cita questa voce
+
+Stampa/esporta
+
+  • Crea un libro
+  • Scarica come PDF
+  • Versione stampabile
+
+In altri progetti
+
+  • Wikimedia Commons
+
+In altre lingue
+
+  • العربية
+  • Azərbaycanca
+  • Български
+  • Català
+  • Čeština
+  • Deutsch
+  • Ελληνικά
+  • English
+  • Español
+  • Eesti
+  • Euskara
+  • فارسی
+  • Suomi
+  • Français
+  • Galego
+  • עברית
+  • हिन्दी
+  • Magyar
+  • Հայերեն
+  • Bahasa Indonesia
+  • 日本語
+  • 한국어
+  • Кыргызча
+  • Lietuvių
+  • Latviešu
+  • മലയാളം
+  • Bahasa Melayu
+  • Nederlands
+  • Norsk
+  • Polski
+  • Português
+  • Română
+  • Русский
+  • Simple English
+  • Shqip
+  • Српски / srpski
+  • Svenska
+  • தமிழ்
+  • ไทย
+  • Türkçe
+  • Українська
+  • Oʻzbekcha/ўзбекча
+  • Tiếng Việt
+  • 中文
+
+Modifica collegamenti
+
+  • Questa pagina è stata modificata per l'ultima volta il 2 mag 2019 alle
+    09:01.
+  • Il testo è disponibile secondo la licenza Creative Commons
+    Attribuzione-Condividi allo stesso modo; possono applicarsi condizioni
+    ulteriori. Vedi le condizioni d'uso per i dettagli.
+
+  • Informativa sulla privacy
+  • Informazioni su Wikipedia
+  • Avvertenze
+  • Sviluppatori
+  • Dichiarazione sui cookie
+  • Versione mobile
+
+  • Wikimedia Foundation
+  • Powered by MediaWiki
+

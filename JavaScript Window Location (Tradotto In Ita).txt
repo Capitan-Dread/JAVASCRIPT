@@ -1,0 +1,167 @@
+
+https://www.w3schools.com/js/js_window_location.asp
+
+---------------------------------------------------------------------
+
+
+                       JavaScript Window Location
+                           (Tradotto In Ita)
+
+
+Posizione finestra di JavaScript
+❮ Precedente Successivo ❯
+L'oggetto window.location può essere utilizzato per ottenere l'indirizzo della pagina corrente (URL) e per reindirizzare il browser a una nuova pagina.
+
+Posizione della finestra
+L'oggetto window.location può essere scritto senza il prefisso di finestra.
+
+Qualche esempio:
+
+Window.location.href restituisce l'href (URL) della pagina corrente
+Window.location.hostname restituisce il nome di dominio dell'host web
+Window.location.pathname restituisce il percorso e il nome file della pagina corrente
+Window.location.protocol restituisce il protocollo web utilizzato (http: o https :)
+Window.location.assign carica un nuovo documento
+Finestra Posizione Href
+La proprietà window.location.href restituisce l'URL della pagina corrente.
+
+Esempio
+Visualizzare l'href (URL) della pagina corrente:
+
+document.getElementById("demo").innerHTML =
+"Page location is " + window.location.href;
+
+Il risultato è:
+
+La posizione della pagina è https://www.w3schools.com/js/js_window_location.asp
+Prova tu stesso >>
+Finestra Posizione Nome host
+La proprietà window.location.hostname, restituisce il nome dell'host internet (della pagina corrente).
+
+Esempio
+Visualizzare il nome dell'host:
+
+document.getElementById("demo").innerHTML =
+"Page hostname is " + window.location.hostname;
+
+Il risultato è:
+
+Il nome del sito è www.w3schools.com
+Prova tu stesso "
+Posizione percorso nome percorso
+La proprietà window.location.pathname restituisce il percorso della pagina corrente.
+
+Esempio
+Visualizzare il nome del percorso dell'URL corrente:
+
+Document.getElementById ("demo")
+"Il percorso della pagina è" + window.location.pathname;
+Il risultato è:
+
+/js/js_window_location.asp
+Prova tu stesso "
+Window Location Protocol
+La proprietà window.location.protocol restituisce il protocollo web della pagina.
+
+Esempio
+Visualizzare il protocollo web:
+
+Document.getElementById ("demo")
+"Il protocollo della pagina è" + window.location.protocol;
+Il risultato è:
+
+Il protocollo della pagina è https:
+Prova tu stesso "
+Porta della posizione della finestra
+La proprietà window.location.port restituisce il numero della porta host internet (della pagina corrente).
+
+Esempio
+Visualizzare il nome dell'host:
+
+Document.getElementById ("demo")
+"Il numero della porta è" + window.location.port;
+Il risultato è:
+
+Il nome della porta è
+Prova tu stesso "
+La maggior parte dei browser non visualizzerà i numeri di porta predefiniti (80 per http e 443 per https)
+
+Assegnazione della posizione della finestra
+Il metodo window.location.assign () carica un nuovo documento.
+
+Esempio
+Carica un nuovo documento:
+
+<Html>
+<Head>
+<Script>
+Funzione newDoc () {
+    window.location.assign ( "https://www.w3schools.com")
+}
+</ Script>
+</ Head>
+<Body>
+
+<Input type = "button" value = "Carica nuovo documento" onclick = "newDoc ()">
+
+</ Body>
+</ Html>
+Prova tu stesso "
+
+❮ Precedente Successivo ❯
+COLOR PICKER
+
+ color Picker
+PER SAPERNE DI PIÙ
+
+Tabs
+menu a discesa
+Fisarmoniche
+Convertire i pesi
+Pulsanti animati
+Navigazione laterale
+Navigazione superiore
+JS Animazioni
+Modal Boxes
+Barre di avanzamento
+Parallasse
+Modulo di accesso
+HTML include
+Google Maps
+caricatori
+Tooltips
+Presentazione
+Elenco dei filtri
+Ordina l'elenco
+CONDIVIDERE
+
+ 
+
+CERTIFICATI
+
+HTML, CSS, JavaScript, PHP, jQuery, Bootstrap e XML.
+
+Leggi di più "
+REPORT ERROR PRINT PAGE FORUM SULLA
+Top 10 Tutorial
+
+Tutorial HTML
+Tutorial CSS
+Tutorial JavaScript
+Tutorial W3.CSS
+Tutorial di Bootstrap
+Tutorial SQL
+Tutorial PHP
+Tutorial jQuery
+Esercitazione angolare
+Tutorial XML
+Top 10 Riferimenti
+
+Riferimento HTML
+Riferimento CSS
+Riferimento di JavaScript
+Riferimento W3.CSS
+Statistiche del browser
+Riferimento di PHP
+Colori HTML
+HTML Chara

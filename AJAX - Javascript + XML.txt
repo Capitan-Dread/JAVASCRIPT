@@ -1,0 +1,232 @@
+	
+                                     AJAX
+
+
+In informatica AJAX, acronimo di Asynchronous JavaScript and XML, è una tecnica di sviluppo software per la realizzazione di applicazioni web interattive (Rich Internet Application). Lo sviluppo di applicazioni HTML con AJAX si basa su uno scambio di dati in background fra web browser e server, che consente l'aggiornamento dinamico di una pagina web senza esplicito ricaricamento da parte dell'utente.
+
+AJAX è asincrono nel senso che i dati extra sono richiesti al server e caricati in background senza interferire con il comportamento della pagina esistente. Normalmente le funzioni richiamate sono scritte con il linguaggio JavaScript. Tuttavia, e a dispetto del nome, l'uso di JavaScript e di XML non è obbligatorio, come non è detto che le richieste di caricamento debbano essere necessariamente asincrone.
+
+Indice
+
+    1 Descrizione
+    2 Confronto con applicazioni tradizionali
+    3 Pro e contro
+    4 Voci correlate
+    5 Altri progetti
+    6 Collegamenti esterni
+        6.1 Ajax Tools e Framework
+        6.2 Risorse
+
+Descrizione
+
+AJAX è una tecnica multi-piattaforma, utilizzabile cioè su molti sistemi operativi, architetture informatiche e browser web, ed esistono numerose implementazioni open source di librerie e framework.
+
+La tecnica Ajax utilizza una combinazione di:
+
+    HTML (o XHTML) e CSS per il markup e lo stile;
+    DOM (Document Object Model) manipolato attraverso un linguaggio ECMAScript come JavaScript o JScript per mostrare le informazioni ed interagirvi;
+    l'oggetto XMLHttpRequest per l'interscambio asincrono dei dati tra il browser dell'utente e il web server. In alcuni framework Ajax e in certe situazioni, può essere usato un oggetto Iframe invece di XMLHttpRequest per scambiare i dati con il server e, in altre implementazioni, tag <script> aggiunti dinamicamente (JSON);
+    in genere viene usato XML come formato di scambio dei dati, anche se di fatto qualunque formato può essere utilizzato, incluso testo semplice, HTML preformattato, JSON e perfino EBML. Questi file sono solitamente generati dinamicamente da script lato server.
+
+Come DHTML o LAMP, Ajax non è una tecnologia individuale, quanto piuttosto un gruppo di tecnologie utilizzate insieme.
+
+Le applicazioni web che usano Ajax richiedono browser che supportano le tecnologie necessarie (quelle dell'elenco sopra). Questi browser includono: Firefox, Opera, Konqueror, Safari, Internet Explorer e Chrome. Tuttavia, per specifica, "Opera non supporta la formattazione degli oggetti XSL".
+Confronto con applicazioni tradizionali
+
+Le applicazioni web tradizionali consentono agli utenti di compilare moduli e, quando questi moduli vengono inviati, viene inviata una richiesta al web-server. Il web server agisce in base a ciò che è stato trasmesso dal modulo e risponde bloccando o mostrando una nuova pagina. Dato che molto codice HTML della prima pagina è identico a quello della seconda, viene sprecata moltissima banda. Dato che una richiesta fatta al web server deve essere trasmessa su ogni interazione con l'applicazione, il tempo di reazione dell'applicazione dipende dal tempo di reazione del web server. Questo comporta che l'interfaccia utente diventi molto più lenta di quanto potrebbe essere.
+
+Le applicazioni Ajax, d'altra parte, possono inviare richieste al web server per ottenere solo i dati che sono necessari (generalmente usando SOAP e JavaScript per mostrare la risposta del server nel browser). Come risultato si ottengono applicazioni più veloci (dato che la quantità di dati interscambiati fra il browser ed il server si riduce). Anche il tempo di elaborazione da parte del web server si riduce poiché la maggior parte dei dati della richiesta sono già stati elaborati.
+
+Un esempio concreto: molti siti usano le tabelle per visualizzare i dati. Per cambiare l'ordine di visualizzazione dei dati, con un'applicazione tradizionale l'utente dovrebbe cliccare un link nell'intestazione della tabella che invierebbe una richiesta al server per ricaricare la pagina con il nuovo ordine. Il web server allora invierebbe una nuova query SQL al database ordinando i dati come richiesto, la eseguirebbe, prenderebbe i dati e ricostruirebbe da zero la pagina web reinviandola integralmente all'utente. Usando le tecnologie Ajax, questo evento potrebbe preferibilmente essere eseguito con uno JavaScript lato client che genera dinamicamente una vista dei dati con DHTML. Un altro esempio potrebbe essere la scelta di un nuovo nickname in fase di creazione di un account su un sito web, nel caso classico, se il nome che abbiamo scelto fosse già esistente, dovremmo compilare prima tutto il modulo ed accorgerci solo dopo aver atteso il caricamento della pagina di conferma che il nome è già esistente e dobbiamo cambiarlo, invece con AJAX può essere introdotto un controllo sull'evento onChange o addirittura OnKeyUp della casella di testo che ci può informare tempestivamente che il nome inserito non è valido, magari evidenziando il testo in rosso (CSS + JavaScript).
+Pro e contro
+
+Come per le applicazioni DHTML, anche le applicazioni AJAX devono essere testate su più browser per verificarne la compatibilità (librerie come Sarissa di SourceForge possono tuttavia essere di aiuto). Inoltre è richiesto che nel client sia attivato JavaScript. Il vantaggio di usare AJAX è la grande velocità alla quale un'applicazione risponde agli input dell'utente.
+
+Un problema abbastanza degno di nota è che, senza l'adozione di adeguate contromisure, le applicazioni AJAX possono rendere non utilizzabile il tasto "indietro" del browser: con questo tipo di applicazioni, infatti, non si naviga da una pagina all'altra, ma si aggiorna di volta in volta una singola parte del medesimo documento. Proprio per questo i browser, che sono programmi orientati alla pagina, non hanno possibilità di risalire ad alcuna di tali versioni "intermedie". Google, nella sua Google Maps, ha sviluppato una possibile soluzione al problema: invece di usare XMLHttpRequest quando l'utente clicca sul pulsante di ricerca, il risultato della ricerca viene inviato in un iframe invisibile, dal quale le informazioni sono portate nella pagina visibile.
+
+Le ultime tecnologie HTML5 (non ancora totalmente supportate ovunque) che permettono di manipolare la cronologia del browser, hanno permesso di ovviare al problema dell'orientamento a pagina. Questo utilizzo si svolge principalmente in 4 fasi:
+
+    Blocco dell'evento di refresh con un event.preventDefault()
+    Introduzione di una nuova entità nella cronologia tramite il metodo history.pushState(state_object, title, link)
+    Richiesta in Ajax
+    Handling dell'evento popstate
+
+In ogni modo, un attento design delle applicazioni AJAX permette di risolvere in parte (talvolta tutti) questi aspetti negativi.
+Voci correlate
+
+    AFLAX, Asynchronous Flash and XML.
+    Icefaces, Framework AJAX.
+    JQuery, opensource, libreria Ajax/DHTML.
+    Jamp, framework open source scritto in PHP e basato su Ajax.
+
+Altri progetti
+
+    Collabora a Wikibooks Wikibooks contiene testi o manuali su AJAX
+    Collabora a Wikimedia Commons Wikimedia Commons contiene immagini o altri file su AJAX
+
+Collegamenti esterni
+Ajax Tools e Framework
+
+    ZK, a huge JAVA servlet Ajax opensource framework.
+    mootools, a super lightweight web2.0 JavaScript framework.
+    Dojo Toolkit, opensource, libreria Ajax/DHTML.
+    Prototype JavaScript Framework opensource, libreria Ajax/DHTML.
+    Rico, opensource.
+    AA, opensource, Ajax Toolkit per PHP.
+    Sajax, Simple Ajax toolkit per PHP.
+    DWR, opensource, libreria Ajax per Java.
+    Rialto, Rich Internet AppLication Toolkit.
+    Xajax, Classe php, licenza LGPL, per sviluppare applicazioni Ajax.
+    JavaScript SOAP Client, libreria gratuita per utilizzare Ajax invocando Web Services.
+    Ajax ASP.NET, AJAX per il framework .NET di Microsoft.
+    jQuery4jsf ajax faces, libreria Ajax per JavaServer Faces.
+    Google Web Toolkit, libreria opensource Ajax.
+
+Risorse
+
+    [1], History API di HTML5 per l'utilizzo con Ajax.
+    (EN) Jesse James Garrett "Ajax: A New Approach to Web Applications", l'articolo originale del coniatore del termine.
+    AJAX:Iniziare Breve introduzione ad Ajax presso il Mozilla Developement Center.
+    (EN) Ajaxian.
+    (EN) Ajax Matters.
+    (EN) Ajax Patterns.
+    Guida completa Ajax in italiano.
+    openajax.it Documentazione in italiano sui Toolkit Ajax open source.
+    Tutorial, Articoli su Ajax.
+    (EN) Ajax Magazine.
+    (EN) Ajax Tutorial Get, post, text, XML.
+    Introduzione ad AJAX: richieste sincrone ed asincrone su ArcadiA Club.
+    Ajax e ASP su ASP Center.
+    (EN) ajaxnetbeans Questo è un progetto ospitato da java.net, con alcuni esempi Ajax pronti all'uso utilizzabili con Netbeans.
+    (EN) Mashup di vari blog su Ajax.
+
+Controllo di autorità 	GND: (DE) 7515401-8
+Categorie:
+
+    Tecnologie per il WebXML DOMStandard Internet
+
+Menu di navigazione
+
+    Accesso non effettuato
+    discussioni
+    contributi
+    Registrati
+    Entra
+
+    Voce
+    Discussione
+
+    Leggi
+    Modifica
+    Modifica wikitesto
+    Cronologia
+
+Ricerca
+
+    Pagina principale
+    Ultime modifiche
+    Una voce a caso
+    Vetrina
+    Aiuto
+    Sportello informazioni
+
+Comunità
+
+    Portale Comunità
+    Bar
+    Il Wikipediano
+    Fai una donazione
+    Contatti
+
+Strumenti
+
+    Puntano qui
+    Modifiche correlate
+    Pagine speciali
+    Link permanente
+    Informazioni sulla pagina
+    Elemento Wikidata
+    Cita questa voce
+
+Stampa/esporta
+
+    Crea un libro
+    Scarica come PDF
+    Versione stampabile
+
+In altri progetti
+
+    Wikimedia Commons
+
+In altre lingue
+
+    Afrikaans
+    العربية
+    Azərbaycanca
+    Български
+    বাংলা
+    Català
+    Čeština
+    Dansk
+    Deutsch
+    English
+    Español
+    Eesti
+    Euskara
+    فارسی
+    Suomi
+    Français
+    Gaeilge
+    Galego
+    עברית
+    हिन्दी
+    Magyar
+    Հայերեն
+    Bahasa Indonesia
+    日本語
+    ქართული
+    Қазақша
+    한국어
+    Lietuvių
+    Македонски
+    മലയാളം
+    Монгол
+    Bahasa Melayu
+    Nederlands
+    Norsk nynorsk
+    Norsk bokmål
+    Polski
+    Piemontèis
+    Português
+    Română
+    Русский
+    Scots
+    Simple English
+    Slovenčina
+    Slovenščina
+    Shqip
+    Српски / srpski
+    Svenska
+    தமிழ்
+    ไทย
+    Türkmençe
+    Türkçe
+    ئۇيغۇرچە / Uyghurche
+    Українська
+    Tiếng Việt
+    中文
+
+Modifica collegamenti
+
+    Questa pagina è stata modificata per l'ultima volta il 17 feb 2017 alle 10:19.
+    Il testo è disponibile secondo la licenza Creative Commons Attribuzione-Condividi allo stesso modo; possono applicarsi condizioni ulteriori. Vedi le Condizioni d'uso per i dettagli. Wikipedia® è un marchio registrato della Wikimedia Foundation, Inc.
+
+    Politica sulla privacy
+    Informazioni su Wikipedia
+    Avvertenze
+    Sviluppatori
+    Dichiarazione sui cookie
+    Versione mobile
+
+    Wikimedia Foundation	
+    Powered by MediaWiki	

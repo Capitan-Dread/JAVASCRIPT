@@ -1,0 +1,122 @@
+
+
+
+                         JavaScript/Il nostro primo programma
+
+
+
+Inserire un JavaScript in una pagina HTML
+
+Per inserire un codice JavaScript in una pagina HTML, è necessario semplicemente usare l'etichetta <script>.
+
+L'attributo più importante di questo tag è type, che specifica il tipo di script usato: nel nostro caso il valore da inserire è application/javascript ma è anche usato, nonostante non sia standard, text/javascript; per la maggior parte dei browser è tuttavia possibile omettere l'attributo type in quanto JavaScript è il linguaggio di scripting web predefinito. L'attributo type è opzionale in HTML5.
+Esiste anche, ma è sconsigliato rispetto all'uso di type, un attributo language per specificare sempre il linguaggio usato (es language="JavaScript").
+
+All'interno del tag script una volta, per problemi di compatibilità con i browser che non supportavano i JavaScript, il testo veniva delimitato da i delimitatori di commento, per evitare che il codice venisse mostrato in forma "grezza". Ad esempio :
+
+<script>
+<!--
+ ...codice...
+-->
+</script>
+Questo accorgimento è tuttavia oggi sconsigliato, oltre ad essere praticamente superfluo in quanto la maggior parte dell'utenza utilizza browser JavaScript-compatibili.
+
+È possibile inoltre usare l'attributo src per inserire un codice JavaScript esterno (solitamente un file con estensione .js). In questo caso viene lasciato vuoto lo spazio all'interno del tag. Ad esempio:
+
+<script src="script.js"></script>
+Il codice JavaScript può essere inserito sia nella sezione head che nella sezione body della pagina HTML, ma le istruzioni vengono comunque eseguite in ordine (a parte nei casi di funzioni che però vedremo più avanti nel corso del libro); la differenza principale è sostanzialmente che il codice dentro head viene eseguito durante il caricamento della pagina, mentre dentro body viene azionato quando richiamato.
+
+Un'altra coppia di attributi, l'uno in alternativa all'altro, che si può usare è async e defer. L'attributo async indica al browser di eseguire lo script in modo asincrono, defer dopo che è stato eseguito il parsing della pagina.
+E' consigliabile quindi inserire il tag script nella sezione head, e non nel body, e usare questi attributi.
+Questi attributi non dovrebbero essere usati per script inline, cioè che non hanno l'attributo src, in quanto di norma non hanno effetto su questo tipo di script. L'attributo async è nuovo in HTML5.
+
+Ciao, Mondo![modifica]
+Eccoci finalmente al nostro primo programma JavaScript: queste poche righe di codice identificano una pagina HTML su cui viene stampato Hello, world!. Create il seguente file con un qualsiasi editor e apritelo con il vostro browser:
+
+ <html>
+      <head>
+          <title>La mia prima applicazione JavaScript</title>
+      </head>
+      <body>
+          <script>
+              document.write("Hello, world!");
+          </script>
+      </body>
+ </html>
+Analizziamo l'unica riga di codice JavaScript presente nella pagina:
+
+ document.write("Hello, world!");
+Quando il browser analizza la pagina, nel momento in cui incontra le istruzioni, se non indicato diversamente (come vedremo più avanti), le esegue secondo l'ordine nel quale sono indicate, ovvero in sequenza (questa operazione è chiamata parsing).
+Le istruzioni sono sempre separate da un punto e virgola (;), ma JavaScript separa ugualmente le istruzioni se intervallate da ritorni a capo.
+
+In particolare, la riga di codice analizzata è un'istruzione che stampa sul documento il testo Hello, world tramite il metodo write dell'oggetto document. Per ora ci basti sapere che un metodo è un sottoprogramma associato esclusivamente ad un oggetto, che può richiedere uno o più parametri per funzionare al meglio. Il metodo write dell'oggetto document stampa nella pagina il testo indicato tra virgolette all'interno delle parentesi.
+
+Cerchiamo di capire meglio come avviene il parsing di uno script JavaScript. Essendo infatti il browser piuttosto veloce a interpretare il codice, non è possibile ai nostri occhi notare l'esecuzione dello script, e sulla pagina compare subito il testo Hello, world!. Modifichiamo quindi il nostro codice come segue:
+
+          ... 
+          <script>
+              alert("Questo è un messaggio");
+              document.write("Hello, world!");
+              alert("Questo è un altro messaggio");
+          </script>
+          ...
+
+Un alertbox in tedesco visualizzata dal browser Konqueror
+Il metodo alert mostra una finestrella contenente il testo indicato tra parentesi e un pulsante "OK". Quando viene eseguito, il parsing della pagina si ferma fino a quando l'utente non clicca sul bottone OK; possiamo quindi capire meglio come lavora il browser: l'esecuzione dello script si fermerà infatti due volte in corrispondenza delle due istruzioni alert. Quando viene mostrato il primo messaggio la pagina in secondo piano apparirà vuota, perché non vi è ancora stato impostato il contenuto; quando viene mostrato il secondo messaggio comparirà anche il testo Hello, world! in quanto sarà stata già eseguita il metodo write.
+
+Da notare la differenza di sintassi tra il metodo alert ed il metodo write. Il primo è preceduto dalla parola document, mentre il secondo no. In realtà si potrebbe scrivere per esteso anche window.alert, che non è obbligatorio. Il significato di questa sintassi lo si vedrà nel seguito di questo corso.
+
+Inserire dei commenti[modifica]
+In JavaScript è possibile inserire dei commenti, ovvero porzioni di testo che verranno ignorate dal parser, di una o più righe delimitandoli da /* e */. È possibile inoltre prevedere commenti di una sola riga utilizzando //. Ad esempio:
+
+ questo codice verrà interpretato
+ /* questo verrà ignorato*/
+ questo codice verrà interpretato
+ /* 
+ questo verrà ignorato
+ anche questo
+ */
+ questo verrà interpretato //e invece questo no
+ //e questo neppure!
+ mentre questo sì
+
+Categorie: JavaScriptModuli 100%
+Menu di navigazione
+Accesso non effettuatodiscussionicontributiRegistratiEntraModulo 100%DiscussioneLeggiModificaCronologiaRicerca
+
+Cerca all'interno di Wikibooks
+Vai
+Pagina principale
+Biblioteca
+Visualteca
+Vetrina
+Ultime modifiche
+Una pagina a caso
+Un libro a caso
+Comunità
+Portale comunità
+il Wikibookiano
+Bar
+Aiuto
+Donazioni
+Contact us
+Strumenti
+Puntano qui
+Modifiche correlate
+Carica su Commons
+Pagine speciali
+Link permanente
+Informazioni sulla pagina
+Cita questa pagina
+Stampa/esporta
+Crea un libro
+Scarica come PDF
+Versione stampabile
+In altre lingue
+English
+Polski
+中文
+Aggiungi collegamenti
+Questa pagina è stata modificata per l'ultima volta il 23 mag 2015 alle 13:12.
+Il testo è disponibile secondo la licenza Creative Commons Attribuzione-Condividi allo stesso modo; possono applicarsi condizioni ulteriori. Vedi le condizioni d'uso per i dettagli.
+PrivacyInformazioni su WikibooksAvvertenzeSviluppatoriDichiarazione sui cookieVersione mobileWikimedia Foundation Powered by MediaWiki

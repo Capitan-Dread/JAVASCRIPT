@@ -1,0 +1,54 @@
+
+[SINTASSI GENERICA]
+
+document.getElementById('id')
+
+-------------------------------------------------------------------------
+
+
+[ESEMPIO GENERICO]
+
+
+<html>
+<head><title> prova </title></head>
+<body>
+
+<div type="font-size: 20px; color: red" id="idElement"></div>
+
+<script>
+
+function elementoId(){
+   document.getElementById('idElement')}
+
+</script>
+
+
+</body>
+</html>
+
+-------------------------------------------------------------------------
+
+
+
+           [ESEMPIO CAMBIARE GRAFICA AGLI style.backgroundcolor 
+            TRAMITE FUNZIONE JS : document.getElementById('id')]
+
+
+
+<html>
+<head><title> prova </title></head>
+<body>
+
+<div type="font-size: 20px; color: red" id="idElement"></div>
+
+<script>
+
+function elementoId(){
+   document.getElementById('idElement').style.backgroundcolor = 'red';}
+
+</script>
+
+
+</body>
+</html>
+

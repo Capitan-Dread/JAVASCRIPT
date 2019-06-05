@@ -1,0 +1,16 @@
+
+[VERSIONE LEGGIBILE]
+
+https://code.jquery.com/jquery-3.3.1.js
+
+--------------------------------------------------------------------------
+
+[VERSIONE MINIFICATA - (PER PC)]
+
+https://code.jquery.com/jquery-3.3.1.min.js
+
+--------------------------------------------------------------------------
+
+[VERSIONE SLIM MINIFICATA - (PER PC)]
+
+https://code.jquery.com/jquery-3.3.1.slim.min.js
